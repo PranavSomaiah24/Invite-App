@@ -1,0 +1,49 @@
+{{>navbar parameter=userToken}}
+<h1 class="welcome">Welcome {{userName}} !</h1>
+<div class="row">
+    <div class="column">
+        <h2>Your Created Events</h2>
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h4 class="card-title">Primary card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        {{#if invitations}}
+        {{#each invitations}}
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">{{this.title}}</div>
+            <div class="card-body">
+                <h4 class="card-title">13th April</h4>
+                <p class="card-text">{{this.content}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        <div class="add"><a href="/add/{{userToken}}"><img src="/plus.png" id="addpost"></a></div>
+    </div>
+    <div class="column">
+        <h2>Your Accepted Events</h2>
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h4 class="card-title">Success card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        {{#if accepted}}
+        {{#each accepted}}
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">{{this.title}}</div>
+            <div class="card-body">
+                <h4 class="card-title">13th April</h4>
+                <p class="card-text">{{this.content}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</div>

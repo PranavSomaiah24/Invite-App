@@ -1,0 +1,12 @@
+{{>navbar}}
+<h3>
+    Add Event
+</h3>
+
+<div class="addForm">
+    <form action="/add/{{userToken}}" method="POST">
+        <input type="text" name="title" class="formStyle" placeholder="Title (required)" required />
+        <input type="text" name="description" class="formStyle" placeholder="Description (required)" required />
+        <button type="submit" class="formButton">ADD</button>
+    </form>
+</div>

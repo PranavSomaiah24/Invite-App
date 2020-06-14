@@ -1,0 +1,14 @@
+{{>navbar parameter=userToken}}
+{{#if invitations}}
+{{#each invitations}}
+<div class="jumbotron">
+    <h1 class="display-3">{{this.title}}</h1>
+    <p class="lead">{{this.content}}</p>
+    <hr class="my-4">
+    <p>Created By: {{this.userName}}</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/accept/{{this._id}}/{{this.userToken}}" role="button">Accept</a>
+    </p>
+</div>
+{{/each}}
+{{/if}}
